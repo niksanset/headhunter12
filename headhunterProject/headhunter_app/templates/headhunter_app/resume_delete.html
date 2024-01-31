@@ -1,0 +1,23 @@
+{% extends 'headhunter_app/base.html' %}
+
+{% block title %}
+Resume delete
+{% endblock title %}
+
+
+{% block content %}
+<div style="position: absolute;left: 700px;top: 200px; background-color: rgb(54, 54, 54);padding: 50px;border-radius: 50px;color: aliceblue;">
+    <h1>Are you sure?</h1>
+  
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Delete">
+    </form>
+    <button >
+        <a href="{% url 'list' %} " style="text-decoration: none;color: black;">Back</a>
+
+    </button>
+
+</div>
+{% endblock content %}

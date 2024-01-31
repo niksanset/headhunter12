@@ -1,0 +1,52 @@
+{% extends "headhunter_app/base.html" %}
+{% load static %}
+
+
+{% block title %}Detail{% endblock title %}
+
+
+{% block content %}
+
+
+<div class="book_list">
+
+    <div class="card" style="width: 24rem;margin: 20px;margin-top: 60px;">
+        <img src="{% static 'headhunter_app/img/1.webp' %}" class="card-img-top" alt="...">
+        {% if user.is_staff %}
+        <div class="card-body">
+         
+
+          <h5 class="card-title">{{ resume.title }}</h5>
+          <p class="card-text">Name: {{ resume.first_name}}</p>
+          <p class="card-text">Last name: {{ resume.last_name}}</p>
+          <p class="card-text">Surname: {{ resume.last_name}}</p>
+          <p class="card-text">Skills: {{ resume.skills}}</p>
+          <p class="card-text">Education: {{ resume.education}}</p>
+          <a href="{% url "vacancy_create" %}" class="btn btn-dark" style="margin: 5px;" > Vacancy create</a>
+          <a href="{% url "vacancy_update" resume.pk %}" class="btn btn-dark" style="margin: 5px;" >Vacancy update</a>
+          <a href="{% url "vacancy_delete" resume.pk %}" class="btn btn-dark " style="margin: 5px;">Vacancy delete</a>
+        </div>
+      </div>
+    
+  </div>
+  {% else %}
+  <div class="card-body">
+
+  <h5 class="card-title">{{ vacancy.vacancy_name }}</h5>
+  <p class="card-text">Company name: {{ vacancy.company_name}}</p>
+  <p class="card-text">Salary: {{ vacancy.salary}}</p>
+  <p class="card-text">Required skills: {{ vacancy.required_skills}}</p>
+  <p class="card-text">Responsibilities: {{ vacancy.responsibilities}}</p>
+  <p class="card-text">Adress: {{ vacancy.adress}}</p>
+  <a href="{% url "resume_create" %}" class="btn btn-dark" style="margin: 5px;" >Resume create</a>
+  <a href="{% url "resume_update" vacancy.pk %}" class="btn btn-dark" style="margin: 5px;" >Resume update</a>
+  <a href="{% url "resume_delete" vacancy.pk %}" class="btn btn-dark " style="margin: 5px;">Resume delete</a>
+</div>
+</div>
+
+</div>
+{% endif %}
+  
+
+
+{% endblock content %}

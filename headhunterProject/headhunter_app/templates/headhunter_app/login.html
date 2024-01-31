@@ -1,0 +1,16 @@
+{% extends "headhunter_app/base.html" %}
+
+
+{% block title %}Start page{% endblock title %}
+
+
+{% block content %}
+<h1>Log In</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Log In">
+</form>
+<p><a href="{% url 'start_page' %}">Back</a></p>
+
+{% endblock content %}

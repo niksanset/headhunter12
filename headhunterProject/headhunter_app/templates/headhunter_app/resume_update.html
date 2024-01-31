@@ -1,0 +1,22 @@
+{% extends 'headhunter_app/base.html' %}
+
+{% block title %}
+Resume update
+{% endblock title %}
+
+{% block content %}
+
+<div class="book_create"  style="position: absolute;left: 700px;top: 200px; background-color: rgb(54, 54, 54);padding: 50px;border-radius: 50px; color: aliceblue;">
+    <h1 style="padding-bottom: 30px;">Resume update</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Update">
+    </form>
+
+
+
+</div>
+
+   
+{% endblock content %}

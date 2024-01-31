@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&family=Roboto&display=swap');
+
+body {
+    background-image: url("..//img/bg.jpg") ;
+    background-attachment: fixed;
+    background-position: center center; 
+   background-size: cover;
+   
+    width: 100%;
+   
+   
+    color: aliceblue;
+
+}
+.main_div {
+    display: flex;
+    justify-content: center;
+    width:1000px;
+    height: 300px;
+    font-size: 100px;
+    animation: zoomIn; 
+    animation-duration: 2s;
+    backdrop-filter:  grayscale(2)  blur(3px) opacity(70%);
+    position: absolute;
+    left: 370px;
+    top: 300px;
+    border-radius: 20px;
+    
+   
+ 
+}
+.main_text {
+    padding-top: 60px;
+    font-size: 100px;
+    font-family: 'Bodoni Moda', serif;
+  
+}
+.book_list{
+    animation: zoomIn; 
+    animation-duration: 1s;
+  
+
+}

@@ -1,0 +1,42 @@
+{% extends "headhunter_app/base.html" %}
+{% load static %}
+
+
+{% block title %}List{% endblock title %}
+
+
+{% block content %}
+
+
+<div class="book_list">
+
+    <div class="card" style="width: 24rem;margin: 20px;margin-top: 60px;">
+        <img src=" {% static 'headhunter_app/img/1.webp' %}" class="card-img-top" alt="...">
+        {% if user.is_staff %}
+        <div class="card-body">
+            {% for resume in resume_list  %}
+
+          <h5 class="card-title"></h5>
+          <p class="card-text">1Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+          <a href="{% url "detail" pk=resume.pk  %} " class="btn btn-dark" style="margin: 5px;" >Resume detail</a>
+        </div>
+      </div>
+     {% endfor %}
+  </div>
+  {% else %}
+  <div class="card-body">
+    {% for vacancy in vacancy_list  %}
+
+  <h5 class="card-title">{{ vacancy }}</h5>
+  <p class="card-text">2Небольшой пример текста, который должен основываться на названии карточки и составлять основную часть содержимого карты.</p>
+  <a href="{% url "detail" pk=vacancy.pk %}" class="btn btn-dark" style="margin: 5px;" >Vacancy detail</a>
+
+</div>
+</div>
+{% endfor %}
+</div>
+{% endif %}
+  
+
+
+{% endblock content %}
